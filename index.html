@@ -10,10 +10,30 @@
     var requestSettings = {method: 'get', url: 'http://cute-little-api.philippe.codes/api/users'}
 function callback(datathatComeback) {
   console.log(datathatComeback);
-  $('body').append(datathatComeback.users[5].bio)
+  $('body').append(datathatComeback.users[30].name)
 }
 $.ajax(requestSettings).done(callback)
 
+// var requestSettings = {method: 'post', url: "http://cute-little-api.philippe.codes/api/users", data: '{"name": "Maz"}', contentType: "application/json"}
+// function cb(d) {
+//   console.log(d);
+// }
+// $.ajax(requestSettings).done(cb)
+
+//single users
+var look = {method: 'get', url: 'http://cute-little-api.philippe.codes/api/users'}
+function sg(d) {
+  console.log(d.users[0]);
+  $('body').append(d.users[40].id)
+}
+$.ajax(look).done(sg)
+
+//delete
+// var look = {method: 'delete', url: 'http://cute-little-api.philippe.codes/api/users', data: '{"id": 40}', contentType: "application/json"}
+// function dl(d) {
+//   console.log("thier gone");
+// }
+// $.ajax(look).done(dl)
 
     </script>
   </body>
