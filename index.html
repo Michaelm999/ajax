@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Intro to AJAX</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+    var requestSettings = {method: 'get', url: 'http://cute-little-api.philippe.codes/api/users'}
+function callback(datathatComeback) {
+  console.log(datathatComeback);
+  $('body').append(datathatComeback.users[5].bio)
+}
+$.ajax(requestSettings).done(callback)
+
+
+    </script>
+  </body>
+</html>
