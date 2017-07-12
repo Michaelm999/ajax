@@ -29,11 +29,11 @@ function sg(d) {
 $.ajax(look).done(sg)
 
 //delete
-// var look = {method: 'delete', url: 'http://cute-little-api.philippe.codes/api/users', data: '{"id": 40}', contentType: "application/json"}
-// function dl(d) {
-//   console.log("thier gone");
-// }
-// $.ajax(look).done(dl)
+var rs = {method: 'delete', url: 'http://cute-little-api.philippe.codes/api/users/5937014357e6b15d56063005'}
+function dl(d) {
+  return console.log(db.user);
+}
+$.ajax(rs).done(dl)
 
     </script>
   </body>

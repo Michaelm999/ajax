@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" charset="utf-8"></script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button id="findAll">See Everyone</button>
+    <button id="Create">Create New Person</button>
+
+    <div class="display">
+
+    </div>
+    <script type="text/javascript">
+
+      $("#findAll").on("click", callback)
+
+      $("#create").on("click", show)
+
+  var requestSettings = {method: 'get', url: 'http://cute-little-api.philippe.codes/api/users'}
+  function callback(data){
+    $.ajax(requestSettings).done(function(data){
+      console.log(data);
+      data.users.forEach(function(item){
+      $('body').append(item.name+ ' ' + item.email+"<br>")})
+    })
+}
+
+
+  var newGuy = {
+    url: 'http://cute-little-api.philippe.codes/api/users/5937014357e6b15d56063005',
+    data: {
+    bio:"I'm not lazy, I'm just always on power-saving mode.",
+    email:"conrad@gmail.com",
+    name:"Conrad"
+    }
+  }
+
+  function show(person) {
+    $.ajax(newGuy).done(function(newGuy){
+      console.log(person);
+    })
+}
+
+  $.ajax(newGuy).done(show)
+
+    </script>
+  </body>
+</html>
