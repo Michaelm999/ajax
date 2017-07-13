@@ -9,7 +9,7 @@
     <button id="findAll">See Everyone</button>
     <button id="Create">Create New Person</button>
 
-    <div class="display">
+    <div id="display">
 
     </div>
     <script type="text/javascript">
@@ -23,7 +23,7 @@
     $.ajax(requestSettings).done(function(data){
       console.log(data);
       data.users.forEach(function(item){
-      $('body').append(item.name+ ' ' + item.email+"<br>")})
+      $('#display').append(item.name+ ' ' + item.email+"<br>")})
     })
 }
 
